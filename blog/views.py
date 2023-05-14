@@ -30,6 +30,10 @@ class PostDetailView(FormMixin, DetailView):
     template_name = 'blog/post-detail.html'
     form_class = CommentForm
 
+    def __init__(self, **kwargs):
+        super().__init__(kwargs)
+        self.object = None
+
     def get_object(self, **kwargs):
         return get_object_or_404(Post, status='published',
                                  slug=self.kwargs.get('slug'),
