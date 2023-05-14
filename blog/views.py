@@ -49,7 +49,7 @@ class PostDetailView(FormMixin, DetailView):
         context = super().get_context_data(**kwargs)
         return get_context_data_about_post(self, context)
 
-    def post(self, request, *args, **kwargs):
+    def post(self):
         self.object = self.get_object()
         form = self.get_form()
 

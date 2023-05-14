@@ -35,7 +35,7 @@ def get_context_data_about_post(self_f, context: dict) -> dict:
     similar_posts = similar_posts.annotate(same_tags=Count('tags')) \
         .order_by('-same_tags', '-publish')[:4]
 
-    comments = Comment.objects.filter(post=post, active=True)
+    comments: QuerySet = Comment.objects.filter(post=post, active=True)
     context["similar_posts"] = similar_posts
     context["comments"] = comments
     context["form"] = self_f.get_form()
