@@ -3,6 +3,7 @@
 
 {% block content %}
  <!-- Page Content -->
+
   <div class="container">
 
     <div class="row">
@@ -24,7 +25,7 @@
         <hr>
 
         <!-- Preview Image -->
-        <img class="img-fluid rounded" src="{{ object.image.url }}" alt="">
+        <img  id="img-preview" class="img-fluid rounded zoomD" src="{{ object.image.url }}" alt="" onclick="zoom()">
 
         <hr>
           {{ object.body }}
@@ -136,4 +137,13 @@
     <!-- /.row -->
   </div>
   <!-- /.container -->
+       <script>
+  function zoom () {
+        var image = new Image();
+        image.src = "{{ object.image.url }}";
+
+        var w = window.open("");
+        w.document.write(image.outerHTML);
+    }
+     </script>
 {% endblock content %}
