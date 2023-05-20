@@ -26,7 +26,10 @@
 
         <!-- Preview Image -->
         <img  id="img-preview" class="img-fluid rounded zoomD" src="{{ object.image.url }}" alt="" onclick="zoom()">
-
+        {% if object.threedhtml %}
+         <hr>
+         {{ object.threedhtml|safe  }}
+        {% endif %}
         <hr>
           {{ object.body }}
         <hr>

@@ -27,6 +27,24 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'file': {
+#             'level': 'WARNING',
+#             'class': 'logging.FileHandler',
+#             'filename': BASE_DIR + 'log.log'
+#         },
+#     },
+#     'loggers': {
+#         'mailings': {
+#             'handlers': ['file'],
+#             'level': 'WARNING',
+#             'propagate': True
+#         }
+#     }
+# }
 
 # Application definition
 

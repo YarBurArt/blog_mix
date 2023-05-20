@@ -35,6 +35,8 @@ class Post(models.Model):
     published = PublishedManager()
     tags = TaggableManager()
 
+    threedhtml = models.TextField(null=True, blank=True)
+
     class Meta:
         ordering = ('-publish',)
 
