@@ -12,11 +12,13 @@ POST_FEED_URL = reverse('blog:post_feed')
 class BlogViewTests(TestCase):
     """
     Test class for blog Views
+    all views should be visible ...
     """
 
     def test_post_list_view(self):
         """
-        Test post_list view
+        Test post_list view:
+        - check if the page is alive
         """
         response = self.client.get(POST_LIST_URL)
         self.assertEqual(response.status_code, 200)
@@ -25,7 +27,8 @@ class BlogViewTests(TestCase):
 
     def test_post_detail_view(self):
         """
-        Test for post detail view
+        Test for post detail view:
+        - check if the page is alive
         """
         post = PostFactory.create()
         response = self.client.get(post.get_absolute_url())
@@ -35,7 +38,9 @@ class BlogViewTests(TestCase):
 
     def test_post_list_by_tag_view(self):
         """
-        Test for post list views by tag view
+        Test for post list views by tag view:
+        - check if the page is alive
+        - check is correct
         """
         post = PostFactory.create()
         tag = post.tags.first()
@@ -47,7 +52,9 @@ class BlogViewTests(TestCase):
 
     def test_post_share_view(self):
         """
-        Test for post share view
+        Test for post share view:
+        - check if the page is alive
+        - check is correct
         """
         post = PostFactory.create()
         response = self.client.get(
@@ -58,21 +65,25 @@ class BlogViewTests(TestCase):
 
     def test_post_feed_view(self):
         """
-        Test for post feed view
+        Test for post feed view:
+        - check that there is the response
         """
         response = self.client.get(POST_FEED_URL)
         self.assertEqual(response.status_code, 200)
 
     def test_sitemap_view(self):
         """
-        Test for sitemap view
+        Test for sitemap view:
+        - check that there is the response
         """
         response = self.client.get('/sitemap.xml')
         self.assertEqual(response.status_code, 200)
 
     def test_search_view(self):
         """
-        Test for search view
+        Test for search view:
+        - check if the page is alive
+        - check is correct
         """
         post = PostFactory.create()
         response = self.client.get(
