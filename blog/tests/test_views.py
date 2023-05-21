@@ -11,8 +11,8 @@ POST_FEED_URL = reverse('blog:post_feed')
 
 class BlogViewTests(TestCase):
     """
-    Test class for blog Views
-    all views should be visible ...
+    Test class for blog Views,
+    all Views should be visible ...
     """
 
     def test_post_list_view(self):
