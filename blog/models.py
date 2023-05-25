@@ -5,6 +5,8 @@ from django.urls import reverse
 
 from taggit.managers import TaggableManager
 
+from markdown import markdown
+
 
 class PublishedManager(models.Manager):
     def get_queryset(self):
@@ -21,6 +23,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=250, unique_for_date='publish')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField()
+    body_markdown = models.TextField(editable=False, null=True, blank=True)
     image = models.ImageField(upload_to="%Y/%m/%d/")
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
@@ -42,6 +45,13 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def __unicode__(self):
+        return self.title
+
+    def save(self):
+        self.body_markdown = markdown(self.body)
+        super(Post, self).save()
 
     def get_absolute_url(self):
         return reverse(

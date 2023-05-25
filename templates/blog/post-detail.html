@@ -30,8 +30,9 @@
          <hr>
          {{ object.threedhtml|safe  }}
         {% endif %}
+        <!-- hr> {{ object.body }} -->
         <hr>
-          {{ object.body }}
+          {{ object.body_markdown|safe }}
         <hr>
         <a href="{% url 'blog:post_share' object.id %}" class="btn btn-info mb-3">Share this post</a>
 
