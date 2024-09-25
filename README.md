@@ -3,12 +3,13 @@ Django blog is a beginner friendly blog application. This project illustrate Dja
 model manager, how to use custom template tags, django Forms and model form, how to send mail with django, how to add rss syndication,
 and generate sitemap and unit test for model, view, form and template tags and also how to seed database with Factory Boy, Faker and management commands.
 
+That's why I took this template and added my own functionality to it, such as displaying 3d models in posts and other things I needed a year ago. I also tried to break some things to understand how they work internally and why they are set up that way, but I didn't dare to save everything in the commits. I made this project public for easier troubleshooting and further progress. You can understand this in my other projects as well. A big thank you to the original author for such an interesting code to learn from.
+
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ## Installing
 ```
-open terminal and type
 git clone https://github.com/devmahmud/DjangoBlog.git
 ```
 
@@ -19,8 +20,8 @@ https://github.com/devmahmud/DjangoBlog.git
 
 ## Requirements
 ```
-Create a virtual environment and active it
-and install requirements type:
+#Create a virtual environment and active it
+#and install requirements type:
 
 pip install -r requirements.txt
 ```
@@ -45,7 +46,7 @@ python manage.py createsuperuser
 ## Creating Dummy data using faker
 ```
 python manage.py seed --posts number_of_post
-example: python manage.py seed --posts 50
+# example: python manage.py seed --posts 50
 ```
 
 ## For sharing post with email change the email configuration
@@ -57,11 +58,12 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'your email'
 EMAIL_HOST_PASSWORD = 'your email password'
 ```
+The functionality related to email protocols and standards within the implementation may not be the most secure architectural approach. Just as I had added my own functionality to this project previously, it would be better to handle this email-related functionality in a separate, isolated web service or to consider integrating with external services for post sharing instead.
 
 ## To run the program in local server use the following command
 ```
 python manage.py runserver
-Then go to http://127.0.0.1:8000 in your browser
+#Then go to http://127.0.0.1:8000 in your browser
 ```
 
 ## To test the project
@@ -90,7 +92,7 @@ or you can simple run `flake8`
 ### Post share page
 ![image](https://user-images.githubusercontent.com/19981097/81926022-2a7b1880-9603-11ea-9cd6-3f465389f250.png)
 
-## Author
+## Original Author 
 ```
   Mahmudul alam
   Email: expelmahmud@gmail.com
