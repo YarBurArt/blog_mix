@@ -1,5 +1,5 @@
 asgiref==3.8.1
-Django==5.1.4
+Django==5.1.14
 django-taggit==6.0.0
 Markdown==3.7
 mccabe==0.7.0
