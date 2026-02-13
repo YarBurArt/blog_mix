@@ -10,5 +10,5 @@ pyflakes==3.2.0
 python-dateutil==2.9.0.post0
 pytz==2024.2
 six==1.16.0
-sqlparse==0.5.1
+sqlparse==0.5.4
 text-unidecode==1.3
